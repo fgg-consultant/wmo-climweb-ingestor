@@ -1,0 +1,7 @@
+services:
+  db:
+    ports:
+      - 56432:5432
+  pg-tileserv:
+    ports:
+      - 7800:7800

@@ -1,4 +1,9 @@
+.vscode
 .idea
-node_modules
-docs/.vitepress/cache
-docs/.vitepress/dist
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+.env*
+!.env.sample

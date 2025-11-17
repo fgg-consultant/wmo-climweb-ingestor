@@ -1,0 +1,3 @@
+iPATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+*/10 * * * * cd /code && /usr/local/bin/python /usr/local/bin/flask --app=app ingest_dustwarning > /proc/1/fd/1 2>/proc/1/fd/2
+*/10 * * * * cd /code && /usr/local/bin/python /usr/local/bin/flask --app=app ingest_dustforecast > /proc/1/fd/1 2>/proc/1/fd/2
