@@ -44,6 +44,7 @@ def db_available():
 health.add_check(db_available)
 
 import app.routes.routes_aemet
+import app.routes.routes_google
 app_flask.register_blueprint(endpoints, url_prefix='/api/v1')
 
 from app import commands
@@ -53,3 +54,5 @@ app_flask.cli.add_command(commands.create_pg_functions)
 app_flask.cli.add_command(commands.load_geometries)
 app_flask.cli.add_command(commands.ingest_dustwarning)
 app_flask.cli.add_command(commands.ingest_dustforecast)
+app_flask.cli.add_command(commands.load_flood_gauges_command)
+app_flask.cli.add_command(commands.ingest_floodstatus_command)

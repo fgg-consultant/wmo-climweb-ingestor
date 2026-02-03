@@ -15,4 +15,5 @@ SETTINGS = {
     'STATIC_DATA_DIR': './app/_static_data/',
     'SQLALCHEMY_DATABASE_URI': os.getenv('SQLALCHEMY_DATABASE_URI'),
     'DATA_DIR': os.getenv('DATA_DIR'),
+    'GOOGLE_FLOOD_API_KEY': os.getenv('GOOGLE_FLOOD_API_KEY'),
 }

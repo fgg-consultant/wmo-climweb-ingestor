@@ -9,6 +9,8 @@ from app import db
 from app.ingest.aemet.ingestor_dustforecast import load_forecast
 from app.ingest.aemet.ingestor_dustwarning import load_warnings
 from app.ingest.geometries.geometries_loader import load_regions
+from app.ingest.google.gauge_loader import load_gauges
+from app.ingest.google.ingestor_floodstatus import load_flood_status
 
 
 ########################
@@ -65,4 +67,23 @@ def ingest_dustwarning():
 def ingest_dustforecast():
     logging.info("[INGESTION][DUST_FORECAST]: Start")
     load_forecast()
+
+
+########################
+# GOOGLE FLOOD COMMANDS
+########################
+@click.command(name="load_flood_gauges")
+@click.option("--country", required=True, help='Country ISO code (e.g., BF for Burkina Faso)')
+def load_flood_gauges_command(country):
+    """Load flood gauges from Google Flood API."""
+    logging.info(f"[INGESTION][FLOOD_GAUGES]: Start for country {country}")
+    load_gauges(country)
+
+
+@click.command(name="ingest_floodstatus")
+@click.option('--country', required=True, help='Country ISO code (e.g., BFA for Burkina Faso)')
+def ingest_floodstatus_command(country):
+    """Ingest flood status data from Google Flood API."""
+    logging.info(f"[INGESTION][FLOOD_STATUS]: Start for country {country}")
+    load_flood_status(country)
 

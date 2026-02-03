@@ -1,0 +1,13 @@
+### GET request to example server
+POST https://floodforecasting.googleapis.com/v1/floodStatus:searchLatestFloodStatusByArea?key=AIzaSyDjX3MqieBkF4GGW3l3VG0F2oTTIjA5AqI
+Content-Type: application/json
+
+{
+  "regionCode": "BF",
+  "pageSize": 1000,
+  "includeNonQualityVerified": false
+}
+
+###
+GET https://floodforecasting.googleapis.com/v1/floodStatus:queryLatestFloodStatusByGaugeIds?key=AIzaSyDjX3MqieBkF4GGW3l3VG0F2oTTIjA5AqI&gaugeIds=hybas_1120714020
+
